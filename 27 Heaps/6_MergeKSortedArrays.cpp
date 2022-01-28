@@ -33,10 +33,16 @@ int main(){
     }
 
     vi ans;
+    vi idx(k,0);
+
     while(!pq.empty()){
-        pii elementToPush = pq.top();
-        ans.push_back(elementToPush.first);
+        pii c = pq.top();
+        ans.push_back(c.first);
         pq.pop();
+
+        if(idx[c.second]+1 < a[c.second].size())
+            pq.push({a[c.second][idx[c.second]],c.second});
+        idx[c.second] += 1;
     }
 
     rep(i,0,ans.size()){
