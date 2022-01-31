@@ -217,13 +217,6 @@ void solveSudoku(vector<vector<char>>& board) {
         }
     }
     
-    for(int i=0;i<9;i++){
-        for(int j=0;j<9;j++){
-            if(box[i][j])
-                cout<<"box = "<<i<<" "<<j<<endl;
-        }
-    }
-    
     canSolveSudoku(board,0,0,rows,cols,box);
     
 }
