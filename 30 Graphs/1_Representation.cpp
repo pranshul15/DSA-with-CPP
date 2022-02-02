@@ -36,6 +36,7 @@ int main(){
         cout<<endl;
     }
 
+    // adjacency list
     cout<<"\n\n\nRepresentation of Adjecency List"<<endl;
     rep(i,1,n+1){
         int t = b[i].size();
@@ -46,10 +47,6 @@ int main(){
         }
         cout<<endl;
     }
-
-    // adjacency list
-
-
 
     return 0;
 }
