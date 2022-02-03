@@ -8,7 +8,7 @@ typedef vector<map<int,int>> vmi;
 #define rep(i,a,b) for(int i=a;i<b;i++)
 
 
-void helper(int r,int c,vvi &v, mpimi &m, vmi &row, vmi &col){
+void helper(int r,int c,vvi &v, mpimi m, vmi row, vmi col){
     // base case
     if(r == 9){
         // when function with row = 9 is called it will be last
@@ -77,8 +77,8 @@ void sudokuSolver(vvi &v){
 
 }
 
-void helper2(int r,int c, vector<vector<int>> &v , map<int,map<int,int>> &grid,
-vector<map<int,int>> &row , vector<map<int,int>> &col){
+void helper2(int r,int c, vector<vector<int>> &v , map<int,map<int,int>> grid,
+vector<map<int,int>> row , vector<map<int,int>> col){
     if((r == 9) && (c == 9)){
         return;
     }
