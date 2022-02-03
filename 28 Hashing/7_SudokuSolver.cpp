@@ -125,8 +125,8 @@ void sudokuSolver2(vvi &v){
     helper2(0,0,v,grid,row,col);
 }
 
-bool helper3(int r,int c,vvi &v, mpimi &m, vmi &row, vmi &col){
-    if((r==9) && (c==9)){
+bool helper3(int r,int c,vvi &v, mpimi m, vmi row, vmi col){
+    if(c==9){
         return true;
     }
     if(r==9){
@@ -245,10 +245,10 @@ int main(){
         {'.','.','.','4','1','9','.','.','5'},
         {'.','.','.','.','8','.','.','7','9'}
     };
-    solveSudoku(board);
+    sudokuSolver3(v);
     rep(i,0,9){
         rep(j,0,9){
-            cout<<board[i][j]<<" ";
+            cout<<v[i][j]<<" ";
         }
         cout<<endl;
     }
