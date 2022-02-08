@@ -78,6 +78,7 @@ int main(){
                 if(parent[j] == nodes[i])
                     cout<<j<<" ";
             }
+            break;
         }
     }
     return 0;
