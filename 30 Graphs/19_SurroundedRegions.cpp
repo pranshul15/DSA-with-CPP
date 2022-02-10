@@ -1,7 +1,7 @@
 /* 
 Given a 2D board containing 'X' and 'O' (the letter O)
 Capture all regions surrounded by 'X'
-Capture => A region is captured by flipping all the O's into 'X's 
+Capture => A region is captured by flipping all the O's into 'X's
 into that surrounded region
 */
 #include<bits/stdc++.h>
@@ -41,7 +41,6 @@ int main(){
         }
         cout<<endl;
     }
-
 
     return 0;
 }
