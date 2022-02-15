@@ -11,7 +11,7 @@ Subsequence: Path of the array in order
 using namespace std;
 
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
+typedef vector<vi> vvi;
 #define rep(i,a,b) for(int i=a ;i<b; i++)
 #define ff first
 #define ss second
@@ -41,11 +41,17 @@ int main(){
     vi a(n);
     rep(i,0,n) cin>>a[i];
 
-    cout<<LongestIncSS(a,n);
+    cout<<LongestIncSS(a,n)<<endl;
 
     // tabulation
-    
+    vi dp2(n+1,1);
 
+    rep(i,0,n+1){
+        rep(j,0,i){
+            dp2[i] = max(dp2[i],dp2[j]+(int)(a[i] > a[j]));
+        }
+    }
+    cout<<dp2[n];
     return 0;
 }
 
