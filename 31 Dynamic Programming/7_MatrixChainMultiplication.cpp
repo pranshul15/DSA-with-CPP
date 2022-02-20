@@ -43,5 +43,25 @@ int main(){
 
     cout<<SolveMCM(a,1,n-1)<<endl;
 
+    vvi dp2(n,vi(n,0));
+
+    int i=1,c=1;
+    
+    rep(x,1,n){
+        i=1;
+        while(c+i < n){
+            // i to c+i => dp2[i][c+i]
+            dp2[i][c+i] = INF;
+            rep(k,i,c+i){
+                dp2[i][c+i] = min(dp2[i][c+i],
+                                dp2[i][k]+dp2[k+1][c+i]+(a[i-1]*a[k]*a[c+i]));
+            }
+            i++;
+        }
+        c++;
+    }
+
+    cout<<dp2[1][n-1];
+
     return 0;
 }
