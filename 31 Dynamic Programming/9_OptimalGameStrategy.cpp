@@ -57,6 +57,22 @@ int main(){
     rep(i,0,n) cin>>a[i];
 
     cout<<OptimalGame(a,0,n-1)<<endl;
+
+    vvi dp2(n,vi(n));
+
+    for(int g=0 ; g<n  ; g++){
+        for(int i=0,j=g ; j<n ; i++,j++){
+            if(i==j) dp2[i][j] = a[i];
+            else if((j-i) == 1) dp2[i][j] = max(a[i],a[j]);
+            else{
+                int val1 = a[i] + min(dp2[i+2][j],dp2[i+1][j-1]);
+                int val2 = a[j] + min(dp2[i+1][j-1],dp2[i][j-2]);
+                dp2[i][j] = max(val1,val2);
+            }
+        }
+    }
+
+    cout<<dp2[0][n-1];
     return 0;
 }
 
