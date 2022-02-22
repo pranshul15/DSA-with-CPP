@@ -22,12 +22,22 @@ int main(){
 
     vvi dp2(n,vi(4,0));
 
+    // dp2[n][i]
+    // i = 0 => number of strings
+    // i = 1 => number of subsequences 'a'
+    // i = 2 => number of subsequences 'ab'
+    // i = 3 => number of subsequences 'abc'
+    
+
     if(s[0] == 'a')
         dp2[0][0] = dp2[0][1] = 1;
 
     else if(s[0] == 'b' || s[0] == 'c')
         dp2[0][0] = 1;
 
+    /*
+    a b c
+    */ 
     else if(s[0] == '?'){
         dp2[0][0] = 3;
         dp2[0][1] = 1;
@@ -76,5 +86,24 @@ ac?b?c
 cccbbbaaa
 5
 a???c
+*/ 
+
+/*
+        a   c   ?   b   ?   c
+e       1   1   3   3   9
+a       1   1   4   4
+ab      0   0   1   5
+abc     0   0   0   0
+
+ac
+
+aca
+acb
+acc
+
+aca|b 
+acb|b 
+acc|b 
+
 
 */ 

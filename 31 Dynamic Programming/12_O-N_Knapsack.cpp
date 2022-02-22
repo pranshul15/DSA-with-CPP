@@ -45,6 +45,7 @@ int main(){
 
     rep(i,0,n)
         cin>>a[i].ff>>a[i].ss;
+    
     int w;cin>>w;
     // ff -> weight
     // ss -> value

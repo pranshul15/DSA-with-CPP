@@ -25,6 +25,9 @@ int Solver(int n,int i){
 
     if(i==0){
         dp1[n][0] = Solver(n-1,0) + Solver(n-1,1);
+        
+        // dp1[n][0] = Solver(n-1,0) + Solver(n-2,0);
+        // this makes it a fibonacci series
     }
     if(i==1){
         dp1[n][1] = Solver(n-1,0);
