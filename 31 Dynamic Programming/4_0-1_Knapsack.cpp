@@ -2,8 +2,8 @@
 using namespace std;
 
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
-typedef vector<pair<int,int>> vpi;
+typedef vector<vector<int> > vvi;
+typedef vector<pair<int,int> > vpi;
 #define rep(i,a,b) for(int i=a ;i<b; i++)
 #define ff first
 #define ss second
@@ -21,7 +21,7 @@ int knapsack(vpi &a, int n, int w){
     if(w<a[n-1].ff)
         dp1[n][w] = knapsack(a,n-1,w);
     else
-        dp1[n][w]= max((a[n-1].ss) + knapsack(a,n,w-(a[n-1].ff)),
+        dp1[n][w]= max((a[n-1].ss) + knapsack(a,n-1,w-(a[n-1].ff)),
                 knapsack(a,n-1,w));
 
     return dp1[n][w];
@@ -39,6 +39,8 @@ int main(){
     // second -> value
     rep(i,0,n) cin>>a[i].ff>>a[i].second;
     int w;cin>>w;
+
+    cout<<knapsack(a,n,w)<<endl;
 
     vvi dp2(n+1,vi (w+1,0));
 
@@ -60,13 +62,14 @@ int main(){
         }
     }
 
-    // cout<<dp2[n][w];
+    cout<<dp2[n][w];
     return 0;
 }
 
 /*
 3
-15 30 45
-60 100 150
+15 60
+30 100
+45 150
 50
 */
