@@ -63,5 +63,23 @@ int main(){
     p.first=1;
     p.second='e';
 
+    cout<<"\nto insert value into vector\n";
+    vector<int> new_vector(5,4);
+    for(auto i:new_vector) cout<<i<<" ";
+    cout<<endl;
+    new_vector.insert(new_vector.begin()+2,7);
+    for(auto i:new_vector) cout<<i<<" ";
+    cout<<endl;
+
+    cout<<"\nto erase value from vector\n";
+    vector<int> v4(6);
+    for(int i=0;i<6;i++){
+        v4[i] = i+1;
+    }
+    for(auto i:v4) cout<<i<<" ";
+    cout<<endl;
+    v4.erase(v4.begin()+1);
+    for(auto i:v4) cout<<i<<" ";
+    cout<<endl;
     return 0;
 }
