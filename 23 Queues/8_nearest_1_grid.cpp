@@ -34,19 +34,19 @@ class Solution
             int i = f.first;
             int j = f.second;
             int dist = ans[i][j] + 1;
-            if ( (i-1 >= 0) && (grid[i-1][j] == 0) && (ans[i-1][j] > dist)) {
+            if ( (i-1 >= 0) && (ans[i-1][j] > dist)) {
                 ans[i-1][j] = dist;
                 q.push( {i-1,j} );
             }
-            if ( (i+1 < n) && (grid[i+1][j] == 0) && (ans[i+1][j] > dist)) {
+            if ( (i+1 < n) && (ans[i+1][j] > dist)) {
                 ans[i+1][j] = dist;
                 q.push( {i+1,j} );
             }
-            if ( (j-1 >= 0) && (grid[i][j-1] == 0) && (ans[i][j-1] > dist)) {
+            if ( (j-1 >= 0) && (ans[i][j-1] > dist)) {
                 ans[i][j-1] = dist;
                 q.push( {i,j-1} );
             }
-            if ( (j+1 < n) && (grid[i][j+1] == 0) && (ans[i][j+1] > dist)) {
+            if ( (j+1 < n) && (ans[i][j+1] >  dist)) {
                 ans[i][j+1] = dist;
                 q.push( {i,j+1} );
             }
